@@ -2,9 +2,10 @@
   "name": "v0-normobaric-chamber-website",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+"scripts": {
     "dev": "next dev",
-    "build": "opennextjs-cloudflare build",
+    "build": "next build",
+    "build:cloudflare": "opennextjs-cloudflare build",
     "start": "next start",
     "lint": "eslint .",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
