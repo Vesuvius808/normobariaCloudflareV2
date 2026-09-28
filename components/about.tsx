@@ -1,58 +1,15 @@
 "use client"
 
 import { useLang } from "@/context/language-context"
+import type { SiteContent } from "@/lib/content"
 
-const copy = {
-  pl: {
-    eyebrow: "Czym jest Normovita",
-    heading: ["Rewolucja", "w Komorze"],
-    p1: "Normovita to nie leczenie — to środowisko nowej generacji zaprojektowane z myślą o optymalizacji człowieka. Łącząc podwyższone ciśnienie atmosferyczne, wzbogacony tlen, dwutlenek węgla i wodór molekularny, tworzy warunki, w których Twoje ciało robi to, co potrafi najlepiej: leczy, regeneruje i rozkwita.",
-    p2Bold: "Dr. Jana Pokrywkę",
-    p2: ", Normovita jest dopracowywana przez lata badań nad biologią komórkową, medycyną sportową i nauką o długowieczności. To nie trend. To zmiana paradygmatu.",
-    p2Pre: "Zapoczątkowana przez ",
-    cta: "Dowiedz się więcej",
-    metrics: [
-      { label: "Ciśnienie", value: "1500 hPa", desc: "Zoptymalizowana gęstość atmosferyczna" },
-      { label: "Tlen", value: "40%", desc: "Stężenie powyżej normy otoczenia" },
-      { label: "CO₂ Enhanced", value: "Tak", desc: "Wazodylatacja i poprawa dostarczania" },
-      { label: "H₂ Infused", value: "Tak", desc: "Antyoksydacyjny wodór molekularny" },
-    ],
-  },
-  en: {
-    eyebrow: "What is Normovita",
-    heading: ["A Revolution", "in a Chamber"],
-    p1: "Normovita is not a medical treatment — it is a next-generation environment engineered for human optimization. By combining elevated atmospheric pressure, enriched oxygen, carbon dioxide, and molecular hydrogen, it creates conditions where your body can do what it does best: heal, regenerate, and thrive.",
-    p2Bold: "Dr. Jan Pokrywka",
-    p2: ", Normovita has been refined through years of research into cellular biology, sports medicine, and longevity science. It is not a trend. It is a paradigm shift.",
-    p2Pre: "Pioneered by ",
-    cta: "Learn More",
-    metrics: [
-      { label: "Pressure", value: "1500 hPa", desc: "Optimized atmospheric density" },
-      { label: "Oxygen", value: "40%", desc: "Above ambient concentration" },
-      { label: "CO₂ Enhanced", value: "Yes", desc: "Vasodilation and delivery boost" },
-      { label: "H₂ Infused", value: "Yes", desc: "Antioxidant molecular hydrogen" },
-    ],
-  },
-  uk: {
-    eyebrow: "Що таке Normovita",
-    heading: ["Революція", "в камері"],
-    p1: "Normovita — це не медичне лікування, а середовище нового покоління, спроектоване для людської оптимізації. Поєднуючи підвищений атмосферний тиск, збагачений кисень, вуглекислий газ і молекулярний водень, воно створює умови, в яких Ваше тіло робить те, що робить найкраще: гояться, регенерується та розквітає.",
-    p2Bold: "др. Яна Покривки",
-    p2: ", Normovita вдосконалювалася протягом років досліджень в галузі клітинної біології, спортивної медицини та науці про довголіття. Це не тренд. Це зміна парадигми.",
-    p2Pre: "Започатковано ",
-    cta: "Дізнайтеся більше",
-    metrics: [
-      { label: "Тиск", value: "1500 гПа", desc: "Оптимізована атмосферна щільність" },
-      { label: "Кисень", value: "40%", desc: "Вище за амбієнтну концентрацію" },
-      { label: "CO₂ Збагачено", value: "Так ✓", desc: "Вазодилатація та поліпшення доставки" },
-      { label: "H₂ Насичено", value: "Так ✓", desc: "Антиоксидантний молекулярний водень" },
-    ],
-  },
+interface AboutProps {
+  content: SiteContent["about"]
 }
 
-export default function About() {
+export default function About({ content }: AboutProps) {
   const { lang } = useLang()
-  const t = copy[lang]
+  const t = content.copy[lang]
 
   return (
     <section id="about" className="bg-nb-white pt-12 pb-28 px-6">
@@ -65,7 +22,7 @@ export default function About() {
           <h2 className="font-stencil text-nb-black text-balance uppercase leading-tight text-5xl md:text-6xl">
             {t.heading[0]}
             <br />
-            {t.heading[1]}
+            {t.heading[1] ?? ""}
           </h2>
           <p className="font-satoshi text-nb-black/70 text-lg leading-relaxed">
             {t.p1}

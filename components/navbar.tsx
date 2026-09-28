@@ -1,37 +1,17 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { useLang, type Lang } from "@/context/language-context"
+import type { SiteContent } from "@/lib/content"
 
-const navLinks = {
-  pl: [
-    { label: "O nas", href: "#about" },
-    { label: "Korzyści", href: "#benefits" },
-    { label: "Nauka", href: "#science" },
-    { label: "Lokalizacja", href: "#locations" },
-  ],
-  en: [
-    { label: "About", href: "#about" },
-    { label: "Benefits", href: "#benefits" },
-    { label: "Science", href: "#science" },
-    { label: "Location", href: "#locations" },
-  ],
-  uk: [
-    { label: "Про нас", href: "#about" },
-    { label: "Переваги", href: "#benefits" },
-    { label: "Наука", href: "#science" },
-    { label: "Локація", href: "#locations" },
-  ],
+interface NavbarProps {
+  content: SiteContent["navbar"]
+  showBlog: boolean
 }
 
-const cta = {
-  pl: "Zarezerwuj sesję",
-  en: "Book a Session",
-  uk: "Забронювати сеанс",
-}
-
-export default function Navbar() {
+export default function Navbar({ content, showBlog }: NavbarProps) {
   const { lang, setLang } = useLang()
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -42,7 +22,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const links = navLinks[lang]
+  const links = [
+    ...content.copy[lang].links,
+    ...(showBlog ? [{ label: content.blogLabel[lang], href: "/blog" }] : []),
+  ]
 
   return (
     <header
@@ -56,20 +39,30 @@ export default function Navbar() {
           href="#"
           className="font-stencil text-nb-black text-xl tracking-widest uppercase hover:text-nb-highlight transition-colors duration-300 shrink-0"
         >
-          Normovita
+          {content.brand}
         </a>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8 lg:gap-10">
           {links.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
-                className="font-satoshi text-nb-black/60 text-sm tracking-wider uppercase hover:text-nb-black transition-colors duration-300 relative group whitespace-nowrap"
-              >
-                {link.label}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-nb-highlight group-hover:w-full transition-all duration-300" />
-              </a>
+              {link.href.startsWith("/") ? (
+                <Link
+                  href={link.href}
+                  className="font-satoshi text-nb-black/60 text-sm tracking-wider uppercase hover:text-nb-black transition-colors duration-300 relative group whitespace-nowrap"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-nb-highlight group-hover:w-full transition-all duration-300" />
+                </Link>
+              ) : (
+                <a
+                  href={link.href}
+                  className="font-satoshi text-nb-black/60 text-sm tracking-wider uppercase hover:text-nb-black transition-colors duration-300 relative group whitespace-nowrap"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-nb-highlight group-hover:w-full transition-all duration-300" />
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -97,7 +90,7 @@ export default function Navbar() {
             href="#locations"
             className="font-satoshi text-xs tracking-widest uppercase bg-nb-highlight text-white px-5 py-2 hover:bg-nb-black transition-all duration-300 whitespace-nowrap"
           >
-            {cta[lang]}
+            {content.copy[lang].cta}
           </a>
         </div>
 
@@ -132,22 +125,33 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-nb-white border-t border-nb-black/10 px-6 py-8 flex flex-col gap-6">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="font-satoshi text-nb-black text-lg tracking-wider uppercase hover:text-nb-highlight transition-colors duration-300"
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) =>
+            link.href.startsWith("/") ? (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="font-satoshi text-nb-black text-lg tracking-wider uppercase hover:text-nb-highlight transition-colors duration-300"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="font-satoshi text-nb-black text-lg tracking-wider uppercase hover:text-nb-highlight transition-colors duration-300"
+              >
+                {link.label}
+              </a>
+            )
+          )}
           <a
             href="#locations"
             onClick={() => setMenuOpen(false)}
             className="font-satoshi text-xs tracking-widest uppercase bg-nb-highlight text-white px-5 py-3 text-center hover:bg-nb-black transition-all duration-300 mt-2"
           >
-            {cta[lang]}
+            {content.copy[lang].cta}
           </a>
         </div>
       )}

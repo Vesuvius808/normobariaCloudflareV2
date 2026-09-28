@@ -1,0 +1,617 @@
+{
+  "navbar": {
+    "brand": "Normovita",
+    "blogLabel": {
+      "pl": "Blog",
+      "en": "Blog",
+      "uk": "Блог"
+    },
+    "copy": {
+      "pl": {
+        "links": [
+          {
+            "label": "O nas",
+            "href": "#about"
+          },
+          {
+            "label": "Korzyści",
+            "href": "#benefits"
+          },
+          {
+            "label": "Nauka",
+            "href": "#science"
+          },
+          {
+            "label": "Lokalizacja",
+            "href": "#locations"
+          }
+        ],
+        "cta": "Zarezerwuj sesję"
+      },
+      "en": {
+        "links": [
+          {
+            "label": "About",
+            "href": "#about"
+          },
+          {
+            "label": "Benefits",
+            "href": "#benefits"
+          },
+          {
+            "label": "Science",
+            "href": "#science"
+          },
+          {
+            "label": "Location",
+            "href": "#locations"
+          }
+        ],
+        "cta": "Book a Session"
+      },
+      "uk": {
+        "links": [
+          {
+            "label": "Про нас",
+            "href": "#about"
+          },
+          {
+            "label": "Переваги",
+            "href": "#benefits"
+          },
+          {
+            "label": "Наука",
+            "href": "#science"
+          },
+          {
+            "label": "Локація",
+            "href": "#locations"
+          }
+        ],
+        "cta": "Забронювати сеанс"
+      }
+    }
+  },
+  "hero": {
+    "image": "/chamber.png",
+    "copy": {
+      "pl": {
+        "heading": [
+          "Przyszłość",
+          "Zdrowia"
+        ],
+        "sub": "Wejdź do komory, gdzie nauka atmosferyczna spotyka się z biologią człowieka. 1500 hPa ciśnienia. 40% tlenu. Wodór molekularny.",
+        "subHighlight": "Twoje komórki — ulepszone.",
+        "stats": [
+          {
+            "value": "1500",
+            "unit": "hPa",
+            "label": "Ciśnienie"
+          },
+          {
+            "value": "40%",
+            "unit": "",
+            "label": "Tlen"
+          },
+          {
+            "value": "H₂",
+            "unit": "",
+            "label": "Wodór molekularny"
+          }
+        ],
+        "cta1": "Zarezerwuj sesję",
+        "cta2": "Odkryj naukę"
+      },
+      "en": {
+        "heading": [
+          "Future of",
+          "Wellness"
+        ],
+        "sub": "Step inside a chamber where atmospheric science meets human biology. 1500 hPa pressure. 40% oxygen. Molecular hydrogen.",
+        "subHighlight": "Your cells, upgraded.",
+        "stats": [
+          {
+            "value": "1500",
+            "unit": "hPa",
+            "label": "Pressure"
+          },
+          {
+            "value": "40%",
+            "unit": "",
+            "label": "Oxygen"
+          },
+          {
+            "value": "H₂",
+            "unit": "",
+            "label": "Molecular Hydrogen"
+          }
+        ],
+        "cta1": "Book a Session",
+        "cta2": "Discover the Science"
+      },
+      "uk": {
+        "heading": [
+          "Майбутнє",
+          "Благополуччя"
+        ],
+        "sub": "Увійдіть до камери, де атмосферна наука зустрічається з біологією людини. 1500 гПа тиску. 40% кисню. Молекулярний водень.",
+        "subHighlight": "Ваші клітини — покращені.",
+        "stats": [
+          {
+            "value": "1500",
+            "unit": "гПа",
+            "label": "Тиск"
+          },
+          {
+            "value": "40%",
+            "unit": "",
+            "label": "Кисень"
+          },
+          {
+            "value": "H₂",
+            "unit": "",
+            "label": "Молекулярний водень"
+          }
+        ],
+        "cta1": "Забронювати сеанс",
+        "cta2": "Дізнайтеся про науку"
+      }
+    }
+  },
+  "about": {
+    "copy": {
+      "pl": {
+        "eyebrow": "Czym jest Normovita",
+        "heading": [
+          "Rewolucja",
+          "w Komorze"
+        ],
+        "p1": "Normovita to nie leczenie — to środowisko nowej generacji zaprojektowane z myślą o optymalizacji człowieka. Łącząc podwyższone ciśnienie atmosferyczne, wzbogacony tlen, dwutlenek węgla i wodór molekularny, tworzy warunki, w których Twoje ciało robi to, co potrafi najlepiej: leczy, regeneruje i rozkwita.",
+        "p2Pre": "Zapoczątkowana przez ",
+        "p2Bold": "Dr. Jana Pokrywkę",
+        "p2": ", Normovita jest dopracowywana przez lata badań nad biologią komórkową, medycyną sportową i nauką o długowieczności. To nie trend. To zmiana paradygmatu.",
+        "cta": "Dowiedz się więcej",
+        "metrics": [
+          {
+            "label": "Ciśnienie",
+            "value": "1500 hPa",
+            "desc": "Zoptymalizowana gęstość atmosferyczna"
+          },
+          {
+            "label": "Tlen",
+            "value": "40%",
+            "desc": "Stężenie powyżej normy otoczenia"
+          },
+          {
+            "label": "CO₂ Enhanced",
+            "value": "Tak",
+            "desc": "Wazodylatacja i poprawa dostarczania"
+          },
+          {
+            "label": "H₂ Infused",
+            "value": "Tak",
+            "desc": "Antyoksydacyjny wodór molekularny"
+          }
+        ]
+      },
+      "en": {
+        "eyebrow": "What is Normovita",
+        "heading": [
+          "A Revolution",
+          "in a Chamber"
+        ],
+        "p1": "Normovita is not a medical treatment — it is a next-generation environment engineered for human optimization. By combining elevated atmospheric pressure, enriched oxygen, carbon dioxide, and molecular hydrogen, it creates conditions where your body can do what it does best: heal, regenerate, and thrive.",
+        "p2Pre": "Pioneered by ",
+        "p2Bold": "Dr. Jan Pokrywka",
+        "p2": ", Normovita has been refined through years of research into cellular biology, sports medicine, and longevity science. It is not a trend. It is a paradigm shift.",
+        "cta": "Learn More",
+        "metrics": [
+          {
+            "label": "Pressure",
+            "value": "1500 hPa",
+            "desc": "Optimized atmospheric density"
+          },
+          {
+            "label": "Oxygen",
+            "value": "40%",
+            "desc": "Above ambient concentration"
+          },
+          {
+            "label": "CO₂ Enhanced",
+            "value": "Yes",
+            "desc": "Vasodilation and delivery boost"
+          },
+          {
+            "label": "H₂ Infused",
+            "value": "Yes",
+            "desc": "Antioxidant molecular hydrogen"
+          }
+        ]
+      },
+      "uk": {
+        "eyebrow": "Що таке Normovita",
+        "heading": [
+          "Революція",
+          "в камері"
+        ],
+        "p1": "Normovita — це не медичне лікування, а середовище нового покоління, спроектоване для людської оптимізації. Поєднуючи підвищений атмосферний тиск, збагачений кисень, вуглекислий газ і молекулярний водень, воно створює умови, в яких Ваше тіло робить те, що робить найкраще: гояться, регенерується та розквітає.",
+        "p2Pre": "Започатковано ",
+        "p2Bold": "др. Яна Покривки",
+        "p2": ", Normovita вдосконалювалася протягом років досліджень в галузі клітинної біології, спортивної медицини та науці про довголіття. Це не тренд. Це зміна парадигми.",
+        "cta": "Дізнайтеся більше",
+        "metrics": [
+          {
+            "label": "Тиск",
+            "value": "1500 гПа",
+            "desc": "Оптимізована атмосферна щільність"
+          },
+          {
+            "label": "Кисень",
+            "value": "40%",
+            "desc": "Вище за амбієнтну концентрацію"
+          },
+          {
+            "label": "CO₂ Збагачено",
+            "value": "Так ✓",
+            "desc": "Вазодилатація та поліпшення доставки"
+          },
+          {
+            "label": "H₂ Насичено",
+            "value": "Так ✓",
+            "desc": "Антиоксидантний молекулярний водень"
+          }
+        ]
+      }
+    }
+  },
+  "benefits": {
+    "copy": {
+      "pl": {
+        "benefitsEyebrow": "Co robi Normovita",
+        "benefitsHeading": "Przeprogramuj swoją biologię",
+        "benefits": [
+          {
+            "icon": "zap",
+            "title": "Aktywacja komórek macierzystych",
+            "description": "Twoje ciało wzmacnia produkcję komórek macierzystych — naprawiając uszkodzenia i regenerując tkanki od wewnątrz."
+          },
+          {
+            "icon": "brain",
+            "title": "Poprawa funkcji poznawczych",
+            "description": "Podwyższony poziom tlenu napędza ostrzejsze skupienie, lepszą pamięć i umysł pracujący na pełnych obrotach."
+          },
+          {
+            "icon": "shield",
+            "title": "Redukcja stanów zapalnych",
+            "description": "Przewlekłe stany zapalne są neutralizowane u źródła — Twoje ciało goi się szybciej i czuje się lżej."
+          },
+          {
+            "icon": "activity",
+            "title": "Regeneracja sportowa",
+            "description": "Przyspiesz regenerację po treningu, kontuzji lub operacji — wróć do szczytowej formy szybciej."
+          },
+          {
+            "icon": "flame",
+            "title": "Głęboki detoks komórkowy",
+            "description": "Wypłucz toksyny, wolne rodniki i metaboliczne odpady, które po cichu degradują Twoje komórki."
+          },
+          {
+            "icon": "clock",
+            "title": "Długowieczność i anti-aging",
+            "description": "Naukowo potwierdzone mechanizmy spowalniające starzenie biologiczne — najbliżej cellular fountain of youth."
+          }
+        ],
+        "whoEyebrow": "Dla kogo",
+        "whoHeading": "Dla prawie każdego",
+        "audiences": [
+          "Biohackerzy i entuzjaści długowieczności",
+          "Sportowcy i aktywni weekendowi",
+          "Zapracowani profesjonaliści",
+          "Rodziny i seniorzy",
+          "Rekonwalescencja po operacjach i chorobach przewlekłych"
+        ],
+        "noteEyebrow": "Ważna informacja",
+        "noteMain": "Normovita to nie leczenie medyczne — to",
+        "noteHighlight": "profilaktyka i optymalizacja na najwyższym poziomie",
+        "noteTail": ". Sesje odbywają się w spokojnym środowisku bez limitów czasu.",
+        "noteSub": "Zalecamy rezygnację z sesji podczas aktywnego przeziębienia, grypy lub infekcji dróg oddechowych. W przypadku wątpliwości dotyczących przeciwwskazań zawsze skonsultuj się z lekarzem."
+      },
+      "en": {
+        "benefitsEyebrow": "What Normovita Does",
+        "benefitsHeading": "Rewire Your Biology",
+        "benefits": [
+          {
+            "icon": "zap",
+            "title": "Stem Cell Activation",
+            "description": "Your body amplifies stem cell production — repairing damage and regenerating tissue from the inside out."
+          },
+          {
+            "icon": "brain",
+            "title": "Cognitive Enhancement",
+            "description": "Elevated oxygen fuels sharper focus, better memory recall, and a mind running on premium fuel."
+          },
+          {
+            "icon": "shield",
+            "title": "Anti-Inflammation",
+            "description": "Chronic inflammation is neutralized at the source, allowing your body to heal faster and feel lighter."
+          },
+          {
+            "icon": "activity",
+            "title": "Athletic Recovery",
+            "description": "Accelerate recovery from workouts, injuries, and surgeries — get back to peak performance faster."
+          },
+          {
+            "icon": "flame",
+            "title": "Deep Cellular Detox",
+            "description": "Flush toxins, free radicals, and metabolic waste that silently degrade your cellular health."
+          },
+          {
+            "icon": "clock",
+            "title": "Longevity & Anti-Aging",
+            "description": "Science-backed mechanisms that slow biological aging — the closest thing to a cellular fountain of youth."
+          }
+        ],
+        "whoEyebrow": "Who It's For",
+        "whoHeading": "Almost Everyone",
+        "audiences": [
+          "Biohackers & longevity enthusiasts",
+          "Athletes & weekend warriors",
+          "Stressed-out professionals",
+          "Families & seniors",
+          "Post-surgery & chronic illness recovery"
+        ],
+        "noteEyebrow": "Important Note",
+        "noteMain": "Normovita is not a medical treatment — it is",
+        "noteHighlight": "next-level prevention and optimization",
+        "noteTail": ". Sessions are calm, pressure-free environments with no time limits.",
+        "noteSub": "We recommend skipping sessions during active colds, flu, or respiratory infections. Always consult your physician if you have concerns about contraindications."
+      },
+      "uk": {
+        "benefitsEyebrow": "Що робить Normovita",
+        "benefitsHeading": "Перепрограмуйте вашу біологію",
+        "benefits": [
+          {
+            "icon": "zap",
+            "title": "Активація стовбурових клітин",
+            "description": "Ваше тіло посилює виробництво стовбурових клітин — відновлюючи пошкодження та регенеруючи тканини зсередини."
+          },
+          {
+            "icon": "brain",
+            "title": "Покращення когнітивних функцій",
+            "description": "Підвищена кількість кисню забезпечує гостріший фокус, кращу пам'ять і ум на повну потужність."
+          },
+          {
+            "icon": "shield",
+            "title": "Зменшення запалення",
+            "description": "Хронічне запалення нейтралізується в джерелі — Ваше тіло гояться швидше й почувається легше."
+          },
+          {
+            "icon": "activity",
+            "title": "Спортивне відновлення",
+            "description": "Прискорте відновлення після тренувань, травм і операцій — поверніться до пікової форми швидше."
+          },
+          {
+            "icon": "flame",
+            "title": "Глибока клітинна детоксикація",
+            "description": "Вимийте токсини, вільні радикали та метаболічні відходи, які мовчазно деградують Ваші клітини."
+          },
+          {
+            "icon": "clock",
+            "title": "Довголіття й анти-старіння",
+            "description": "Науково обґрунтовані механізми, що сповільнюють біологічне старіння — найближче до клітинного фонтану молоді."
+          }
+        ],
+        "whoEyebrow": "Для кого",
+        "whoHeading": "Майже для кожного",
+        "audiences": [
+          "Біохакери та ентузіасти довголіття",
+          "Спортсмени та активні люди",
+          "Стресовані професіонали",
+          "Сім'ї та пенсіонери",
+          "Відновлення після операцій і хронічних хвороб"
+        ],
+        "noteEyebrow": "Важлива примітка",
+        "noteMain": "Normovita — це не медичне лікування, а",
+        "noteHighlight": "профілактика та оптимізація найвищого рівня",
+        "noteTail": ". Сеанси проходять у спокійному середовищі без обмежень часу.",
+        "noteSub": "Ми рекомендуємо пропустити сеанси під час активної застуди, грипу або респіраторних інфекцій. Завжди проконсультуйтеся зі своїм лікарем, якщо у вас є питання щодо протипоказань."
+      }
+    }
+  },
+  "locations": {
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ul.+Modlińska+184,+03-119+Warszawa",
+    "hours": {
+      "sessions": [
+        "9-11",
+        "11-13",
+        "13-15",
+        "15-17",
+        "17-19",
+        "19-21"
+      ],
+      "nightSession": "21-9"
+    },
+    "copy": {
+      "pl": {
+        "name": "Normovita Warszawa",
+        "tag": "Warszawa",
+        "address": "ul. Modlińska 184, 03-119 Warszawa",
+        "phone": "+48 730 007 011",
+        "email": "biuro@normobariawarszawa24h.pl",
+        "description": "Miejska oaza dla mieszkańców stolicy. Odwiedź nas i przekonaj się, jak optymalizacja atmosferyczna może odmienić Twoje życie.",
+        "eyebrow": "Odwiedź nas",
+        "heading": [
+          "Gdzie nas",
+          "znajdziesz"
+        ],
+        "addressLabel": "Adres",
+        "phoneLabel": "Telefon",
+        "emailLabel": "E-mail",
+        "hoursLabel": "Godziny sesji",
+        "hoursNote": "7 dni w tygodniu, oprócz świąt",
+        "nightLabel": "nocna sesja",
+        "sessionsLabel": "Dzienne sesje",
+        "sessionsHeading": "Zarezerwuj sesję",
+        "sessionsDescription": "Każda sesja w komorze trwa 2 godziny. Możesz również wybrać sesję nocną i spędzić noc w optymalnych warunkach atmosferycznych."
+      },
+      "en": {
+        "name": "Normovita Warsaw",
+        "tag": "Warsaw",
+        "address": "ul. Modlińska 184, 03-119 Warszawa",
+        "phone": "+48 730 007 011",
+        "email": "biuro@normobariawarszawa24h.pl",
+        "description": "An urban oasis in the heart of the capital. Visit us and discover how atmospheric optimization can transform your life.",
+        "eyebrow": "Visit Us",
+        "heading": [
+          "Where to",
+          "Find Us"
+        ],
+        "addressLabel": "Address",
+        "phoneLabel": "Phone",
+        "emailLabel": "Email",
+        "hoursLabel": "Session Hours",
+        "hoursNote": "7 days a week, except holidays",
+        "nightLabel": "night session",
+        "sessionsLabel": "Day sessions",
+        "sessionsHeading": "Book a Session",
+        "sessionsDescription": "Each chamber session lasts 2 hours. You can also choose a night session and spend the night in optimal atmospheric conditions."
+      },
+      "uk": {
+        "name": "Normovita Варшава",
+        "tag": "Варшава",
+        "address": "вул. Модліньська 184, 03-119 Варшава",
+        "phone": "+48 730 007 011",
+        "email": "biuro@normobariawarszawa24h.pl",
+        "description": "Міський оазис у серці столиці. Відвідайте нас і дізнайтеся, як атмосферна оптимізація може змінити Ваше життя.",
+        "eyebrow": "Відвідайте нас",
+        "heading": [
+          "Де нас",
+          "знайти"
+        ],
+        "addressLabel": "Адреса",
+        "phoneLabel": "Телефон",
+        "emailLabel": "Електронна пошта",
+        "hoursLabel": "Години сеансів",
+        "hoursNote": "7 днів на тиждень, крім свят",
+        "nightLabel": "нічна сесія",
+        "sessionsLabel": "Денні сеанси",
+        "sessionsHeading": "Забронювати сеанс",
+        "sessionsDescription": "Кожен сеанс у камері триває 2 години. Ви також можете обрати нічний сеанс і провести ніч в оптимальних атмосферних умовах."
+      }
+    }
+  },
+  "footer": {
+    "brand": "Normovita",
+    "copy": {
+      "pl": {
+        "links": [
+          {
+            "label": "O nas",
+            "href": "#about"
+          },
+          {
+            "label": "Korzyści",
+            "href": "#benefits"
+          },
+          {
+            "label": "Nauka",
+            "href": "#science"
+          },
+          {
+            "label": "Lokalizacje",
+            "href": "#locations"
+          }
+        ],
+        "tagline": "Nauka optymalizacji atmosferycznej, zapoczątkowana przez ",
+        "taglineAuthor": "dr. Jana Pokrywkę",
+        "taglineEnd": ". Ruch ku lepszemu, dłuższemu i pełnemu energii życiu.",
+        "sourcesLabel": "Oficjalne źródła",
+        "contactLabel": "Kontakt",
+        "privacyLabel": "Polityka prywatności",
+        "copyright": "© {year} Normovita. Nie jest leczeniem medycznym. Wyłącznie profilaktyka i optymalizacja."
+      },
+      "en": {
+        "links": [
+          {
+            "label": "About",
+            "href": "#about"
+          },
+          {
+            "label": "Benefits",
+            "href": "#benefits"
+          },
+          {
+            "label": "Science",
+            "href": "#science"
+          },
+          {
+            "label": "Locations",
+            "href": "#locations"
+          }
+        ],
+        "tagline": "The science of atmospheric optimization, pioneered by ",
+        "taglineAuthor": "Dr. Jan Pokrywka",
+        "taglineEnd": ". A movement towards a better, longer, more energized life.",
+        "sourcesLabel": "Official Sources",
+        "contactLabel": "Contact",
+        "privacyLabel": "Privacy policy",
+        "copyright": "© {year} Normovita. Not a medical treatment. For prevention and optimization only."
+      },
+      "uk": {
+        "links": [
+          {
+            "label": "Про нас",
+            "href": "#about"
+          },
+          {
+            "label": "Переваги",
+            "href": "#benefits"
+          },
+          {
+            "label": "Наука",
+            "href": "#science"
+          },
+          {
+            "label": "Локації",
+            "href": "#locations"
+          }
+        ],
+        "tagline": "Наука атмосферної оптимізації, започаткована ",
+        "taglineAuthor": "др. Яном Покривкою",
+        "taglineEnd": ". Рух до кращого, довшого та бадьорого життя.",
+        "sourcesLabel": "Офіційні джерела",
+        "contactLabel": "Контакт",
+        "privacyLabel": "Політика конфіденційності",
+        "copyright": "© {year} Normovita. Не є медичним лікуванням. Лише профілактика та оптимізація."
+      }
+    }
+  },
+  "blog": {
+    "copy": {
+      "pl": {
+        "eyebrow": "Aktualności",
+        "heading": "Blog",
+        "readMore": "Czytaj więcej",
+        "viewAll": "Zobacz wszystkie wpisy",
+        "backToBlog": "Wróć do bloga",
+        "noPosts": "Brak wpisów."
+      },
+      "en": {
+        "eyebrow": "News & Insights",
+        "heading": "Blog",
+        "readMore": "Read more",
+        "viewAll": "View all posts",
+        "backToBlog": "Back to blog",
+        "noPosts": "No posts yet."
+      },
+      "uk": {
+        "eyebrow": "Новини та ідеї",
+        "heading": "Блог",
+        "readMore": "Читати далі",
+        "viewAll": "Переглянути всі записи",
+        "backToBlog": "Повернутися до блогу",
+        "noPosts": "Записів немає."
+      }
+    }
+  }
+}

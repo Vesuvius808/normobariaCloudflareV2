@@ -2,91 +2,16 @@
 
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
 import { useLang } from "@/context/language-context"
+import type { SiteContent } from "@/lib/content"
 
-const MAPS_URL =
-  "https://www.google.com/maps/search/?api=1&query=ul.+Modlińska+184,+03-119+Warszawa"
-
-const location = {
-  pl: {
-    name: "Normovita Warszawa",
-    tag: "Warszawa",
-    address: "ul. Modlińska 184, 03-119 Warszawa",
-    phone: "+48 730 007 011",
-    email: "biuro@normobariawarszawa24h.pl",
-    description:
-      "Miejska oaza dla mieszkańców stolicy. Odwiedź nas i przekonaj się, jak optymalizacja atmosferyczna może odmienić Twoje życie.",
-  },
-  en: {
-    name: "Normovita Warsaw",
-    tag: "Warsaw",
-    address: "ul. Modlińska 184, 03-119 Warszawa",
-    phone: "+48 730 007 011",
-    email: "biuro@normobariawarszawa24h.pl",
-    description:
-      "An urban oasis in the heart of the capital. Visit us and discover how atmospheric optimization can transform your life.",
-  },
-  uk: {
-    name: "Normovita Варшава",
-    tag: "Варшава",
-    address: "вул. Модліньська 184, 03-119 Варшава",
-    phone: "+48 730 007 011",
-    email: "biuro@normobariawarszawa24h.pl",
-    description:
-      "Міський оазис у серці столиці. Відвідайте нас і дізнайтеся, як атмосферна оптимізація може змінити Ваше життя.",
-  },
+interface LocationsProps {
+  content: SiteContent["locations"]
 }
 
-const hours = {
-  sessions: ["9-11", "11-13", "13-15", "15-17", "17-19", "19-21"],
-  nightSession: "21-9",
-}
-
-const ui = {
-  pl: {
-    eyebrow: "Odwiedź nas",
-    heading: ["Gdzie nas", "znajdziesz"],
-    addressLabel: "Adres",
-    phoneLabel: "Telefon",
-    emailLabel: "E-mail",
-    hoursLabel: "Godziny sesji",
-    hoursNote: "7 dni w tygodniu, oprócz świąt",
-    nightLabel: "nocna sesja",
-    sessionsLabel: "Dzienne sesje",
-    sessionsHeading: "Zarezerwuj sesję",
-    sessionsDescription: "Każda sesja w komorze trwa 2 godziny. Możesz również wybrać sesję nocną i spędzić noc w optymalnych warunkach atmosferycznych.",
-  },
-  en: {
-    eyebrow: "Visit Us",
-    heading: ["Where to", "Find Us"],
-    addressLabel: "Address",
-    phoneLabel: "Phone",
-    emailLabel: "Email",
-    hoursLabel: "Session Hours",
-    hoursNote: "7 days a week, except holidays",
-    nightLabel: "night session",
-    sessionsLabel: "Day sessions",
-    sessionsHeading: "Book a Session",
-    sessionsDescription: "Each chamber session lasts 2 hours. You can also choose a night session and spend the night in optimal atmospheric conditions.",
-  },
-  uk: {
-    eyebrow: "Відвідайте нас",
-    heading: ["Де нас", "знайти"],
-    addressLabel: "Адреса",
-    phoneLabel: "Телефон",
-    emailLabel: "Електронна пошта",
-    hoursLabel: "Години сеансів",
-    hoursNote: "7 днів на тиждень, крім свят",
-    nightLabel: "нічна сесія",
-    sessionsLabel: "Денні сеанси",
-    sessionsHeading: "Забронювати сеанс",
-    sessionsDescription: "Кожен сеанс у камері триває 2 години. Ви також можете обрати нічний сеанс і провести ніч в оптимальних атмосферних умовах.",
-  },
-}
-
-export default function Locations() {
+export default function Locations({ content }: LocationsProps) {
   const { lang } = useLang()
-  const t = ui[lang]
-  const loc = location[lang]
+  const t = content.copy[lang]
+  const loc = content.copy[lang]
 
   return (
     <section id="locations" className="bg-nb-white py-28 px-6">
@@ -98,7 +23,7 @@ export default function Locations() {
           <h2 className="font-stencil text-nb-black uppercase leading-tight text-5xl md:text-6xl">
             {t.heading[0]}
             <br />
-            {t.heading[1]}
+            {t.heading[1] ?? ""}
           </h2>
         </div>
 
@@ -121,7 +46,7 @@ export default function Locations() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-nb-black/10 border border-nb-black/10">
           {/* Address */}
           <a
-            href={MAPS_URL}
+            href={content.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-nb-white p-8 flex flex-col gap-3 group hover:bg-nb-highlight/50 transition-colors duration-300"
@@ -195,31 +120,33 @@ export default function Locations() {
               </span>
             </div>
           </div>
-          
+
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
               <span className="font-satoshi text-nb-black/40 text-xs tracking-widest uppercase">
                 {t.sessionsLabel}
               </span>
               <div className="flex flex-wrap gap-2">
-                {hours.sessions.map((session) => (
-                  <span
-                    key={session}
-                    className="font-satoshi text-nb-black text-sm px-4 py-2 bg-nb-black/5 border border-nb-black/10"
-                  >
-                    {session}
-                  </span>
-                ))}
+                {content.hours.sessions
+                  .filter((session) => typeof session === "string" && session.trim() !== "")
+                  .map((session, index) => (
+                    <span
+                      key={`${session}-${index}`}
+                      className="font-satoshi text-nb-black text-sm px-4 py-2 bg-nb-black/5 border border-nb-black/10"
+                    >
+                      {session}
+                    </span>
+                  ))}
               </div>
             </div>
-            
+
             <div className="flex flex-col gap-2">
               <span className="font-satoshi text-nb-black/40 text-xs tracking-widest uppercase">
                 {t.nightLabel}
               </span>
               <div className="flex items-center gap-3">
                 <span className="font-satoshi text-nb-highlight text-sm px-4 py-2 bg-nb-highlight/20 border border-nb-highlight/40 font-medium">
-                  {hours.nightSession}
+                  {content.hours.nightSession}
                 </span>
               </div>
             </div>

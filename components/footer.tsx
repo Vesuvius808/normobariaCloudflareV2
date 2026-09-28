@@ -2,65 +2,19 @@
 
 import Link from "next/link"
 import { useLang } from "@/context/language-context"
+import type { SiteContent } from "@/lib/content"
 
-const navLinks = {
-  pl: [
-    { label: "O nas", href: "#about" },
-    { label: "Korzyści", href: "#benefits" },
-    { label: "Nauka", href: "#science" },
-    { label: "Lokalizacje", href: "#locations" },
-  ],
-  en: [
-    { label: "About", href: "#about" },
-    { label: "Benefits", href: "#benefits" },
-    { label: "Science", href: "#science" },
-    { label: "Locations", href: "#locations" },
-  ],
-  uk: [
-    { label: "Про нас", href: "#about" },
-    { label: "Переваги", href: "#benefits" },
-    { label: "Наука", href: "#science" },
-    { label: "Локації", href: "#locations" },
-  ],
+interface FooterProps {
+  content: SiteContent["footer"]
+  locations: SiteContent["locations"]
+  showBlog: boolean
 }
 
-const copy = {
-  pl: {
-    tagline: "Nauka optymalizacji atmosferycznej, zapoczątkowana przez ",
-    taglineAuthor: "dr. Jana Pokrywkę",
-    taglineEnd: ". Ruch ku lepszemu, dłuższemu i pełnemu energii życiu.",
-    sourcesLabel: "Oficjalne źródła",
-    contactLabel: "Kontakt",
-    privacyLabel: "Polityka prywatności",
-    copyright: (year: number) =>
-      `© ${year} Normovita. Nie jest leczeniem medycznym. Wyłącznie profilaktyka i optymalizacja.`,
-  },
-  en: {
-    tagline: "The science of atmospheric optimization, pioneered by ",
-    taglineAuthor: "Dr. Jan Pokrywka",
-    taglineEnd: ". A movement towards a better, longer, more energized life.",
-    sourcesLabel: "Official Sources",
-    contactLabel: "Contact",
-    privacyLabel: "Privacy policy",
-    copyright: (year: number) =>
-      `© ${year} Normovita. Not a medical treatment. For prevention and optimization only.`,
-  },
-  uk: {
-    tagline: "Наука атмосферної оптимізації, започаткована ",
-    taglineAuthor: "др. Яном Покривкою",
-    taglineEnd: ". Рух до кращого, довшого та бадьорого життя.",
-    sourcesLabel: "Офіційні джерела",
-    contactLabel: "Контакт",
-    privacyLabel: "Політика конфіденційності",
-    copyright: (year: number) =>
-      `© ${year} Normovita. Не є медичним лікуванням. Лише профілактика та оптимізація.`,
-  },
-}
-
-export default function Footer() {
+export default function Footer({ content, locations, showBlog }: FooterProps) {
   const { lang } = useLang()
-  const t = copy[lang]
-  const links = navLinks[lang]
+  const t = content.copy[lang]
+  const loc = locations.copy[lang]
+  const links = t.links
 
   return (
     <footer className="bg-nb-white border-t border-nb-black/10 py-16 px-6">
@@ -70,7 +24,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-4 max-w-xs">
             <span className="font-stencil text-nb-black text-3xl tracking-widest uppercase">
-              Normovita
+              {content.brand}
             </span>
             <p className="font-satoshi text-nb-black/60 text-sm leading-relaxed">
               {t.tagline}
@@ -92,6 +46,16 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              {showBlog && (
+                <li>
+                  <Link
+                    href="/blog"
+                    className="font-satoshi text-nb-black/60 text-sm tracking-wider uppercase hover:text-nb-black transition-colors duration-300"
+                  >
+                    Blog
+                  </Link>
+                </li>
+              )}
             </ul>
           </nav>
 
@@ -101,19 +65,19 @@ export default function Footer() {
               {t.contactLabel}
             </p>
             <a
-              href="tel:+48730007011"
+              href={`tel:${loc.phone.replace(/\s/g, "")}`}
               className="font-satoshi text-nb-black/60 text-sm hover:text-nb-highlight transition-colors duration-300"
             >
-              +48 730 007 011
+              {loc.phone}
             </a>
             <a
-              href="mailto:biuro@normobariawarszawa24h.pl"
+              href={`mailto:${loc.email}`}
               className="font-satoshi text-nb-black/60 text-sm hover:text-nb-highlight transition-colors duration-300"
             >
-              biuro@normobariawarszawa24h.pl
+              {loc.email}
             </a>
             <p className="font-satoshi text-nb-black/60 text-sm">
-              ul. Modlińska 184, 03-119 Warszawa
+              {loc.address}
             </p>
           </div>
         </div>
@@ -124,7 +88,7 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <p className="font-satoshi text-nb-black/60 text-xs">
-            {t.copyright(new Date().getFullYear())}
+            {t.copyright.replace("{year}", String(new Date().getFullYear()))}
           </p>
           <Link
             href="/polityka-prywatnosci"
