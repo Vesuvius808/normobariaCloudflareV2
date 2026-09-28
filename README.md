@@ -14,9 +14,6 @@ pnpm run dev
 npm run dev
 ```
 
-> **Note:** `@opennextjs/cloudflare` has a peer-dependency conflict with the pinned
-> `next` version — install with `npm install --legacy-peer-deps`.
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Admin Panel (`/admin`)
