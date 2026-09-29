@@ -14,6 +14,16 @@ export function usingDefaultPassword(): boolean {
   return !process.env.ADMIN_PASSWORD?.trim()
 }
 
+/**
+ * Admin login is only allowed when a real password is configured.
+ * In local dev the default password is tolerated for convenience;
+ * in production the panel stays locked until ADMIN_PASSWORD is set.
+ */
+export function isAuthConfigured(): boolean {
+  if (process.env.NODE_ENV !== "production") return true
+  return !usingDefaultPassword()
+}
+
 function getSecret(): string {
   return process.env.ADMIN_SESSION_SECRET?.trim() || `nb-admin-secret:${getAdminPassword()}`
 }

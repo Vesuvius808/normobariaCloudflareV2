@@ -7,6 +7,7 @@ import {
   clearSessionCookie,
   getAdminPassword,
   isAuthenticated,
+  isAuthConfigured,
   setSessionCookie,
 } from "@/lib/admin-auth"
 import { deepMerge, savePosts, saveSiteContent, type BlogPost } from "@/lib/content"
@@ -22,11 +23,20 @@ export interface UploadResult extends ActionResult {
 }
 
 async function checkAuth(): Promise<string | null> {
+  if (!isAuthConfigured()) {
+    return "Admin actions are disabled on this deployment."
+  }
   if (await isAuthenticated()) return null
   return "Your session has expired. Please log in again."
 }
 
 export async function loginAction(password: string): Promise<ActionResult> {
+  if (!isAuthConfigured()) {
+    return {
+      ok: false,
+      error: "Admin login is disabled on this deployment. Set the ADMIN_PASSWORD environment variable to enable it.",
+    }
+  }
   if (!password) return { ok: false, error: "Enter the password." }
   if (password !== getAdminPassword()) return { ok: false, error: "Incorrect password." }
   await setSessionCookie()
